@@ -1,0 +1,66 @@
+class Solution {
+public:
+ vector<int>ans;
+ vector<int>lf(vector<int>& nums, int target){
+     int start=0;
+        int n=nums.size(),a=-1;
+        int end=n-1;
+//checking first occurence
+        while(start<=end)
+        {
+            int mid=start+(end-start)/2;
+            if(target==nums[mid])
+
+            {cout<<"l"<<mid;
+                a=mid;//bs store karke dekh rahe par left side val array check karenge shayad koi or first occurence ban jaae
+            end=mid-1;//restrict kr do yhan
+}
+            else if(target<nums[mid])
+            end=mid-1;
+            else if(target>nums[mid])
+            start=mid+1;
+                
+
+        }
+       
+        ans.push_back(a);
+        
+//last occuence
+        int s=0;
+       
+        int e=n-1;
+         while(s<=e)
+        {
+            int mid=s+(e-s)/2;
+            if(target==nums[mid])
+           {
+               cout<<"r"<<mid;
+               a=mid;
+            s=mid+1;}
+            else if(target<nums[mid])
+            e=mid-1;
+            else if(target>nums[mid])
+            s=mid+1;
+          
+        }
+          ans.push_back(a);
+        return ans;
+        }
+    vector<int> searchRange(vector<int>& nums, int target) {
+        
+        return(lf(nums,target));
+       
+    }
+};
+
+
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+Example 2:
+
+Input: nums = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]
+Example 3:
+
+Input: nums = [], target = 0
+Output: [-1,-1]
