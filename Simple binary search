@@ -1,0 +1,27 @@
+class Solution {
+public:
+	int search(vector<int>& nums, int target) {
+		int l=0, r=nums.size()-1;
+		while(l<=r)
+		{
+			int mid = l+(r-l)/2;
+			if(nums[mid]==target)   return mid;
+			if(nums[mid]<target)    l = mid+1;  
+			else    r = mid-1;
+		}
+		return -1;
+	}
+};
+
+
+Input: nums = [-1,0,3,5,9,12], target = 9
+Output: 4
+Explanation: 9 exists in nums and its index is 4
+
+//If array is in descending order(reverse)
+then l=mid-1
+and r=mid+1
+
+//if order of sorting is not known then check by-
+if(arr[0]<arr[1] - ascending
+else decending
