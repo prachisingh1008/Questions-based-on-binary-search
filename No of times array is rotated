@@ -1,0 +1,42 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+// } Driver Code Ends
+//User function template for C++
+
+
+class Solution {
+public:
+    int findKRotation(int arr[], int n) {
+        int start = 0, end = n - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (arr[mid] > arr[mid + 1]) {//arr[mid] is the largest element
+                return mid + 1; // Found the rotation point (pivot)
+            } else if (arr[start] <= arr[mid]) {
+                start = mid + 1;
+            } else {
+                end = mid;
+            }
+        }
+        return 0; // Array is not rotated, so rotation point is at 0
+    }
+};
+
+
+
+
+
+
+
+Input:
+N = 5
+Arr[] = {5, 1, 2, 3, 4}
+Output: 1
+Explanation: The given array is 5 1 2 3 4. 
+The original sorted array is 1 2 3 4 5. 
+We can see that the array was rotated 
+1 times to the right.
