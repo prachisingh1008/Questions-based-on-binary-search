@@ -7,7 +7,8 @@ using namespace std;
 // } Driver Code Ends
 //User function template for C++
 
-
+//logic isme ye hai kii jo minimum element hai uska index = no of times array is rotated ,to isme largest element ke bagal me sabse small element 
+hi hogs isliy vo condition check kr rahe
 class Solution {
 public:
     int findKRotation(int arr[], int n) {
