@@ -14,7 +14,7 @@ Each child should read min pages
 class Solution 
 {
     public:
-    int acc(int A[],int N,int K,int mid)
+    bool acc(int A[],int N,int K,int mid)
     {
         int s=1;//no of student count karne ke liy
         int sum=0;
