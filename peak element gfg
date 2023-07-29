@@ -1,0 +1,43 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class Solution
+{
+    public:
+    int peakElement(int arr[], int n)
+    {
+       
+        int l=1,r=n-2;
+        
+        if(n==1)
+        return 0;
+        if(arr[0]>arr[1])
+            return 0;
+            
+             if(arr[n-1]>arr[n-2])
+            return n-1;
+        while(l<=r)
+        {
+            int mid=l+(r-l)/2;
+            
+            
+            
+            if(mid>0&&mid<n-1)//taaki jo side ki condition hai vo baad me check krr sake , usme 1 hi se compare karna padta hai
+            {
+            if(arr[mid]>=arr[mid-1]&&arr[mid]>=arr[mid+1])
+            return mid;
+            else if(arr[mid+1]>arr[mid])
+            l=mid+1;
+            else
+            r=mid-1;}
+            
+
+        }
+       return 0; 
+    }
+    
+
+};
+
